@@ -1,0 +1,40 @@
+@import "reset.css";
+@import "variables.css";
+@import "utilities.css";
+@import "global.css";
+@import "components.css";
+@import "sections.css";
+
+:root {
+  --color-primary: #7700e0;
+  --color-secondary: #04135b;
+  --color-dark: #010205;
+  --color-light: #ffffff;
+  --color-grey: #878c91;
+
+  --font-base: "Plus Jakarta Sans", sans-serif;
+
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 32px;
+  --spacing-lg: 64px;
+}
+span {
+  color: var(--color-primary);
+}
+
+/* blog  */
+/* blog  */
+/* blog  */
+/* blog  */
+/* blog  */
+
+.blog-heading-section-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+.blog-heading-section-wrapper h1 {
+  line-height: 1.2;
+}

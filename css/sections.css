@@ -1,0 +1,19 @@
+.section-hero {
+  background-color: var(--color-light);
+}
+
+.hero_component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero_heading {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero_paragraph {
+  max-width: 600px;
+}
