@@ -1,3 +1,12 @@
+.paragraph-w {
+    color: #ffffff;
+}
+.paragraph-b {
+    color: #010205;
+}
+.paragraph-g {
+    color: var(--color-grey);
+}
 .container {
   width: 100%;
   max-width: 1200px;
@@ -34,3 +43,14 @@
   align-items: center;
   justify-content: center;
 }
+
+.mb-xs {
+  margin-bottom: var(--spacing-xs);
+}
+.mb-sm {
+  margin-bottom: var(--spacing-sm);
+}
+.mb-lg {
+  margin-bottom: var(--spacing-lg);
+}
+

@@ -8,8 +8,8 @@
 :root {
   --color-primary: #7700e0;
   --color-secondary: #04135b;
-  --color-dark: #010205;
-  --color-light: #ffffff;
+  --color-dark: #1e1e2f;
+  --color-light: #f4f5fa;
   --color-grey: #878c91;
 
   --font-base: "Plus Jakarta Sans", sans-serif;
@@ -31,10 +31,318 @@ span {
 
 .blog-heading-section-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: var(--spacing-lg);
+  width: 100%;
+  padding-bottom: 5rem;
 }
 .blog-heading-section-wrapper h1 {
   line-height: 1.2;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.blog-heading-section-wrapper p {
+  max-width: 60%;
+}
+
+.blog-content-wrapper-text {
+  position: relative;
+  background-color: var(--color-light);
+  /* box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1); */
+  padding: 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  /* gap: var(--spacing-md); */
+  width: 100%;
+}
+.blog-item {
+  width: 100%;
+}
+.blog-content-wrapper-text-img {
+  width: 100%;
+}
+.blog-content-wrapper-text-img img {
+  display: block;
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+
+  object-position: top;
+  border-radius: 10px;
+  /* height: 100px; */
+}
+.blog-inner-content {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  padding: 0 20px 25px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgb(0, 0, 0, 0.9) 40%, transparent 100%);
+  border-radius: 10px;
+}
+.blog-content-wrapper-text-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.blog-content-wrapper {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.blog-content-wrapper-text h3 {
+  line-height: 1.4;
+  font-size: 23px;
+  color: #ffffff;
+}
+
+.blog-button-wrapper {
+  transform: translateY(80px);
+  opacity: 0;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+.blog-inner-content {
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  cursor: default;
+}
+.blog-inner-content:hover .blog-button-wrapper {
+  transform: translateY(0);
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  opacity: 1;
+}
+
+/* client logos  */
+/* client logos  */
+/* client logos  */
+/* client logos  */
+/* client logos  */
+
+.section-client-logo {
+  background-color: #000000;
+}
+
+.client-logo-heading-wrapper h5 {
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.client-logo-heading-wrapper {
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px 0;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.client-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #7700e0, transparent);
+  max-width: 100px;
+}
+
+.logo-carousel {
+  overflow: hidden;
+  width: 100%;
+  background-color: #000000;
+  position: relative;
+  touch-action: pan-y;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Dark shadow on left and right */
+.logo-carousel::before,
+.logo-carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logo-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, #000000 60%, transparent);
+}
+
+.logo-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, #000000 60%, transparent);
+}
+
+.carousel-track {
+  display: flex;
+  gap: 80px;
+  width: max-content;
+  animation: scroll-left 30s linear infinite;
+}
+
+.carousel-track img {
+  height: 45px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in;
+  user-select: none;
+  pointer-events: none;
+}
+
+.carousel-track img:hover {
+  filter: grayscale(0%);
+}
+
+/* Pause animation on hover */
+.logo-carousel:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Services  */
+/* Services  */
+/* Services  */
+/* Services  */
+.section-services {
+  /* background: url(../assets/Bg/Services-bg.jpg) no-repeat center center/cover; */
+  padding: 4rem 0;
+}
+.services-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  align-self: stretch;
+}
+.services-image-wrapper {
+  width: 100%;
+  max-width: 50%;
+  min-height: 500px;
+}
+
+.services-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.services-list-wrapper {
+  width: 100%;
+  max-width: 50%;
+  background-color: #000000;
+  display: block;
+  padding: 3rem;
+}
+
+.services-list {
+  width: 100%;
+  margin: auto;
+  min-height: 500px;
+}
+
+.service-item-content {
+  display: flex;
+  gap: 50px;
+  z-index: 2;
+}
+
+.service-item a {
+  flex: 1;
+  grid-row-gap: 20px;
+  border-bottom: 1px solid #878c9182;
+  justify-content: space-between;
+  align-self: stretch;
+  align-items: center;
+  height: 90px;
+  transition: height 0.5s ease-in, opacity 0.5s ease-in;
+  display: flex;
+  opacity: 0.4;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-color: transparent;
+  padding: 0 10px;
+}
+.service-item:first-child a {
+  border-top: 1px solid #878c9182;
+}
+
+/* ✅ Background image per item using CSS variable --bg */
+.service-item a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  z-index: 0;
+  will-change: opacity;
+}
+
+/* ✅ Fade in image on hover or active */
+.service-item a:hover::before,
+.service-item-link-active a::before {
+  opacity: 0.3; /* subtle image visibility */
+  transition: opacity 0.5s ease-in;
+}
+
+/* ✅ Keep hover and active styling */
+.service-item a:hover,
+.service-item-link-active a {
+  opacity: 0.8;
+  border-bottom: 1px solid #878c9182;
+  height: 100px;
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in, height 0.5s ease-in;
+  background-color: #7700e030;
+  transform: scale(1.01);
+}
+
+.services-list h3 {
+  color: var(--color-light);
+  font-size: 1.5rem;
+  text-align: start;
+}
+
+.services-list span {
+  color: var(--color-light);
+  font-size: 1.5rem;
+}
+
+.services-list img {
+  width: 30px;
 }
