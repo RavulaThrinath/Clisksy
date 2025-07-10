@@ -1,18 +1,62 @@
+// Load header.html into the page
+fetch("header.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("header").innerHTML = data;
+
+    // Scroll behavior
+    const navbar = document.getElementById("navbar");
+    const menuToggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav");
+    const submenuParent = document.querySelector(".has-submenu");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+
+    menuToggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+
+    submenuParent.addEventListener("click", (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        submenuParent.classList.toggle("active");
+      }
+    });
+  });
+
+// footer
+// footer
+// footer
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("footer.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("footer").innerHTML = data;
+    })
+    .catch((error) => console.error("Error loading footer:", error));
+});
+
 // blog content
 // blog content
 // blog content
 // blog content
 const blogData = [
   {
-    img: "./assets/Blog/Blog-Cover-1.jpg",
+    img: "./assets/Blog/Blog-1.webp",
     title: "Cutting-Edge Trends <br> in Digital Marketing",
   },
   {
-    img: "./assets/Blog/Blog-Cover-2.jpg",
+    img: "./assets/Blog/Blog-2.webp",
     title: "Beyond Human: <br> AI Meets Marketing",
   },
   {
-    img: "./assets/Blog/Blog-Cover-3.jpg",
+    img: "./assets/Blog/Blog-3.webp",
     title: "The AI-Powered <br> Marketing Chronicles",
   },
 ];
@@ -114,3 +158,39 @@ items.forEach((item, index) => {
     originalActive.classList.add("service-item-link-active");
   });
 });
+
+// Testimonials
+// Testimonials
+// Testimonials
+// Testimonials
+
+const wrapper = document.getElementById("testimonialWrapper");
+const slider = document.getElementById("testimonialSlider");
+
+// Clone cards for seamless loop
+const cloneNodes = slider.innerHTML;
+slider.innerHTML += cloneNodes; // duplicate cards
+let scrollSpeed = 0.5; // pixels/frame
+let scrollX = 0;
+let paused = false;
+
+function loop() {
+  if (!paused) {
+    scrollX += scrollSpeed;
+    if (scrollX >= slider.scrollWidth / 2) scrollX = 0; // reset loop
+    slider.style.transform = `translateX(-${scrollX}px)`;
+  }
+  requestAnimationFrame(loop);
+}
+
+wrapper.addEventListener("mouseenter", () => (paused = true));
+wrapper.addEventListener("mouseleave", () => (paused = false));
+
+// Start loop after DOM is ready
+window.addEventListener("load", loop);
+
+// faqs
+// faqs
+// faqs
+
+
